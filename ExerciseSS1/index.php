@@ -1,12 +1,12 @@
 <form action="" method="GET">
-	<p>Nhập số thứ nhất <input type="text" name="a"></p>
-	<p>Nhập số thứ hai <input type="text" name="b"></p>
+	<p>Nhập số thứ nhất <input type="number" name="a"></p>
+	<p>Nhập số thứ hai <input type="number" name="b"></p>
 	<input type="submit" name="calculate" value="Calculate">
 </form>
 <?php
 	$result = "" ;
-	$a = isset($_GET['a']) ? $_GET['a'] : ''; 
-	$b = isset($_GET['b']) ? $_GET['b'] : ''; 
+	$a = isset($_GET['a']) ? $_GET['a'] : 0; 
+	$b = isset($_GET['b']) ? $_GET['b'] : 0; 
 	function mySum($a = 0, $b = 0){
 		return $a + $b;
 	};
