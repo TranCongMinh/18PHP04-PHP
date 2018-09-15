@@ -40,8 +40,8 @@
 		),
 	);
 	function danhSmartphone($Smartphone){
+	$i=1;
 	foreach ($Smartphone as $key => $value) {
-		$i=1;
 		$hinhanh = $value['image'];
 		echo "$i "."$key"."<br>";
 		echo $value['name']." Giá ";
@@ -55,8 +55,8 @@
 	$Smartphone['Galaxy J8 ']['giamgia'] = '15';
 
 	function danhSmartphoneGiamGia($Smartphone){
+	$i=1;
 	foreach ($Smartphone as $key => $value) {
-		$i=1;
 		$hinhanh = $value['image'];
 		echo "$i "."$key"."<br>";
 		echo $value['name']."   Giá  ";

@@ -12,8 +12,8 @@
 		),
 	);
 	function danhSmartphone($Smartphone){
+	$i=1;
 	foreach ($Smartphone as $key => $value) {
-		$i=1;
 		$hinhanh = $value['image'];
 		echo "$i "."$key"."<br>";
 		echo $value['name']." Giá ";
@@ -27,16 +27,16 @@
 	$Smartphone['Galaxy J8 ']['giamgia'] = '15';
 
 	function danhSmartphoneGiamGia($Smartphone){
-	foreach ($Smartphone as $key => $value) {
 		$i=1;
-		$hinhanh = $value['image'];
-		echo "$i "."$key"."<br>";
-		echo $value['name']."   Giá  ";
-		echo $value['gia']."$ "."</br>    Giá bán còn   ";
-		echo giamGia($value['gia'],$value['giamgia'])."$ ";
-		echo "   Đã giảm giá  ".$value['giamgia']."  %  </br>";
-		echo "<b>Hình ảnh : </b> <img src=".$hinhanh." />"."<br>";
-		$i++;
+		foreach ($Smartphone as $key => $value) {
+			$hinhanh = $value['image'];
+			echo "$i "."$key"."<br>";
+			echo $value['name']."   Giá  ";
+			echo $value['gia']."$ "."</br>    Giá bán còn   ";
+			echo giamGia($value['gia'],$value['giamgia'])."$ ";
+			echo "   Đã giảm giá  ".$value['giamgia']."  %  </br>";
+			echo "<b>Hình ảnh : </b> <img src=".$hinhanh." />"."<br>";
+			$i++;
 	}// Hàm in mảng
 	}
 	function giamGia($gia ,$GiamGia){
