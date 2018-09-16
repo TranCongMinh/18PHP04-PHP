@@ -1,0 +1,1 @@
+<h1>Đăng kí thành công</h1>
