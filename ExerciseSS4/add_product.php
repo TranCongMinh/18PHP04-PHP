@@ -5,8 +5,8 @@
 </head>
 <body>
 		<?php
-		include('connect.php');
-		if(isset($_POST['submit'])){
+			include('connect.php');
+			if(isset($_POST['submit'])){
 			$id = $_POST['id'];
 			$name = $_POST['name'];
 			$price = $_POST['price'];
@@ -16,12 +16,12 @@
 			if ($id == '') {
 				echo "Bạn chưa nhập ID";
 			}else
-			while($row = mysqli_fetch_array($rs_id, MYSQLI_NUM))
-	  		 {
-	  		 	if ($id == $row[0]) {
-	  		 		echo "ID không được trùng nhau";
-	  		 	}
-	  		 }
+				while($row = mysqli_fetch_array($rs_id, MYSQLI_NUM))
+		  		 {
+		  		 	if ($id == $row[0]) {
+		  		 		echo "ID không được trùng nhau";
+		  		 	}
+		  		 }
 			$sql = "INSERT INTO product(
 								id,
 								name,
