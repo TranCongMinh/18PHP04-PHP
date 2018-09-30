@@ -13,6 +13,9 @@
 			$description = $_POST['description'];
 			$sql_id ="SELECT `id` FROM `product`";
 			$rs_id=mysqli_query($conn,$sql_id);
+			if ($id == '') {
+				echo "Bạn chưa nhập ID";
+			}else
 			while($row = mysqli_fetch_array($rs_id, MYSQLI_NUM))
 	  		 {
 	  		 	if ($id == $row[0]) {
