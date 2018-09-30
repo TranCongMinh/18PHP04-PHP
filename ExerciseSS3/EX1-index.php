@@ -22,7 +22,8 @@
 		$errConutry = '';
 		$checkMale = $checkFemale = $checkOther = '';
 		$checkJP = $checkKR = $checkCN = '';
-		include('login.php');
+		
+
 			if (isset($_POST['Submit'])) {
 			$Name = $_POST['name'];
 			$Email = $_POST['email'];
