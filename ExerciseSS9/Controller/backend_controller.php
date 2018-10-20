@@ -8,7 +8,7 @@
 		function handleRequest() {
 			$action = isset($_GET['action'])?$_GET['action']:'home';
 			switch ($action) {
-						case 'add_user':
+				case 'add_user':
 							include_once 'Model/user.php';
 							if(!isset($_SESSION['login'])){
 								header("Location: login.php");
@@ -24,7 +24,7 @@
 								$userModel->InsertUser($name, $username, $password,$avatar);
 								header("Location: admin.php?action=list_user");
 							}
-							include 'view/backend/add_user.php';
+								include 'view/backend/add_user.php';
 							break;
 				case 'list_user':
 						include_once 'Model/user.php';
@@ -48,7 +48,7 @@
 							break;
 
 						case 'edit_user':
-				include_once 'Model/user.php';
+						include_once 'Model/user.php';
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}

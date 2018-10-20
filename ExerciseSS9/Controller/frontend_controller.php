@@ -1,8 +1,8 @@
 <?php 
 
 	include 'config/connectdb.php';
-	include 'model/user.php';
-	include 'model/product.php';
+	// include 'model/user.php';
+	// include 'model/product.php';
 	class FrontendController {
 		function handleRequest(){
 			$action = isset($_GET['action'])?$_GET['action']:'home';
