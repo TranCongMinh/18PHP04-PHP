@@ -1,13 +1,15 @@
 <?php 
 	class ConnectDB {
-		
+		public $conn;
+		function __construct(){
+			$this->connect();
+		}
 		function connect(){
 			$server = 'localhost';
 			$username = 'root';
 			$password = '';
-			$database = '18php04_minhminh';
+			$database = '18php04_test';
 			$this->conn = mysqli_connect($server, $username, $password, $database);
-			// mysqli_set_charset($this->conn,"utf8");
 			return $this->conn;
 		}
 	}

@@ -1,6 +1,5 @@
 <?php 
-	include 'config/connectdb.php';
-	class News extends ConnectDB{
+		class News extends ConnectDB{
 		// function getListNew($category_id) {
 		// 	if ($category_id != ''){
 		// 		$sql = "SELECT news.id, news.summary, news.title, news.content, news.category,  news.image , news.created_at , news.updated_at AS category  FROM news INNER JOIN new_categories ON 
@@ -12,6 +11,10 @@
 		// 	$result = mysqli_query($this->conn, $sql);
 		// 	return $result;
 		// }
+		public $conn;
+		function __construct(){
+			$this->connect();
+		}
 		function getListNew() {
 			$sql = "SELECT news.id, news.summary, news.title, news.content, new_categories.name_NC,  news.image , news.created_at , news.updated_at AS category  FROM news INNER JOIN new_categories ON 
 			news.category = new_categories.id_NC";

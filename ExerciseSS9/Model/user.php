@@ -1,6 +1,10 @@
 <?php 
-	include 'config/connectdb.php';
+	
 	class User extends ConnectDB{
+		public $conn;
+		function __construct(){
+			$this->connect();
+		}
 		function InsertUser($name, $username, $password,$avatar){
 			$sql = "INSERT INTO users (name, username, password, avatar) VALUES ('$name', '$username', '$password','$avatar')";
 			return mysqli_query($this->conn, $sql);

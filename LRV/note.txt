@@ -1,0 +1,6 @@
+Laravel Debugbar : Quản lí laravel
+Laravel Log Viewer : check nội dung từ những file logs mà Laravel sinh ra bên trong thư mục storage/logs từ trang web của mình
+https://techtalk.vn/loi-khuyen-de-hoc-laravel-nhanh-hon.html
+Còn yếu :
+Season và Cookie
+Đổ dữ liệu ra 

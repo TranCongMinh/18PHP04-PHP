@@ -1,6 +1,10 @@
 <?php 
-	include 'config/connectdb.php';
+	
 	class Product extends ConnectDB{
+		public $conn;
+		function __construct(){
+			$this->connect();
+		}
 		function InsertProduct($product_category_id, $name, $price, $imageName){
 			$sql = "INSERT INTO products (product_category_id,name,price,image) VALUES ('$product_category_id','$name', '$price', '$imageName')";
 			return mysqli_query($this->conn, $sql);

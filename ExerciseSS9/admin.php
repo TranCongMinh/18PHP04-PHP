@@ -24,7 +24,7 @@ include 'controller/backend_controller.php';
     <section class="content">
       <!-- Info boxes -->
          <?php 
-          $controller = new Controller();
+          $controller = new BackendController();
           $controller->handleRequest();
         ?>
       <!-- /.row -->

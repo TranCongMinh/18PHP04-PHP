@@ -1,7 +1,10 @@
-<?php 
-	
+<?php
 
-	class Controller {
+	include 'config/connectdb.php';
+	include 'model/user.php';
+	include 'model/product.php';
+	include 'model/news.php';
+	class BackendController {
 		/*
 			* Kiem tra request tu view
 		*/
@@ -9,7 +12,7 @@
 			$action = isset($_GET['action'])?$_GET['action']:'home';
 			switch ($action) {
 				case 'add_user':
-							include_once 'Model/user.php';
+
 							if(!isset($_SESSION['login'])){
 								header("Location: login.php");
 							}
@@ -27,7 +30,7 @@
 								include 'view/backend/add_user.php';
 							break;
 				case 'list_user':
-						include_once 'Model/user.php';
+
 							if(!isset($_SESSION['login'])){
 								header("Location: login.php");
 							}
@@ -37,7 +40,7 @@
 							include 'view/backend/list_user.php';
 							break;
 				case 'delete_user':
-						include 'Model/user.php';
+
 							if(!isset($_SESSION['login'])){
 								header("Location: login.php");
 							}
@@ -48,7 +51,7 @@
 							break;
 
 						case 'edit_user':
-						include_once 'Model/user.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -67,9 +70,9 @@
 							header("Location: admin.php?action=list_user");
 						}
 						include 'view/backend/edit_user.php';
-						break;		
+						break;
 				case 'add_product':
-						include_once 'Model/product.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -90,8 +93,8 @@
 						include 'view/backend/add_product.php';
 						break;
 				case 'list_product':
-						include_once 'Model/product.php';
-					
+
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -100,7 +103,7 @@
 						include 'view/backend/list_product.php';
 						break;
 				case 'edit_product':
-						include_once 'Model/product.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -128,7 +131,7 @@
 								move_uploaded_file($image['tmp_name'], $path.$imageName);
 								unlink('dist/img2/'.$imageEdit);
 							}
-							
+
 							$productModel = new Product();
 							$productModel->EditProduct($id,$product_category_id, $name, $price, $imageName);
 							header("Location: admin.php?action=list_product");
@@ -136,7 +139,7 @@
 						include 'view/backend/edit_product.php';
 						break;
 				case 'delete_product':
-						include 'Model/product.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -146,7 +149,7 @@
 						header("Location: admin.php?action=list_product");
 						break;
 				case 'list_news':
-						include 'Model/news.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -155,7 +158,7 @@
 						include 'view/backend/list_news.php';
 						break;
 				case 'add_news':
-						include 'Model/news.php';
+
 						if(!isset($_SESSION['login'])){
 							header("Location: login.php");
 						}
@@ -177,7 +180,7 @@
 						include 'view/backend/add_news.php';
 						break;
 				case 'delete_news':
-					include 'Model/news.php';
+
 					if(!isset($_SESSION['login'])){
 						header("Location: login.php");
 					}
@@ -188,7 +191,6 @@
 					header("Location: admin.php?action=list_news");
 					break;
 				case 'login':
-						include_once 'Model/user.php';	
 						if (isset($_POST['login'])) {
 							$username = $_POST['username'];
 							$password = $_POST['password'];
@@ -199,7 +201,7 @@
 									$_SESSION['login'] = $username;
 									$_SESSION['avatar'] = $row['avatar'];
 								}
-								
+
 								header("Location: admin.php?action=list_user");
 							} else {
 								header("Location: login.php");
@@ -207,7 +209,7 @@
 						}
 						break;
 				case 'logout':
-						include_once 'Model/user.php';
+
 							unset($_SESSION['login']);
 							header("Location: login.php");
 							break;
@@ -217,5 +219,6 @@
 			}
 
 		}
+
 	}
 ?>
