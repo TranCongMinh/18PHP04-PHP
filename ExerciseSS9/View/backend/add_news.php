@@ -37,7 +37,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary" name="add_news">ADD PRODUCT</button>
+                <button type="submit" class="btn btn-primary" name="add_news">ADD NEWS</button>
               </div>
             </form>
           </div>

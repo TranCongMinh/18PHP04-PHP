@@ -1,5 +1,5 @@
 <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">List user</h3>

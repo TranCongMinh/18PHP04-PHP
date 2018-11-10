@@ -1,20 +1,24 @@
 
+
 <div class="container">
 	
 <div class="col-md-9">
+				<?php 
+				if (isset($_GET['page'])) {
+					$pageNow = $_GET['page'];
+				}else $pageNow = 1;
+				
+				echo "Trang "."$pageNow";
+				 ?>
 	            <div class="panel panel-default">
 	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >
 	            		<h2 style="margin-top:0px; margin-bottom:0px;"> Tin Tức</h2>
 	            	</div>
-					<?php $totalPage = mysqli_num_rows($listAll);
-						$soTrangMuonHienThi = 2;
-						$currentPage = ceil($totalPage/$soTrangMuonHienThi);
-						echo $currentPage;
-					 ?>
 	            	<div class="panel-body">
 	            		<!-- item -->
-	            		<?php while ($row = mysqli_fetch_array($listAll)) {
+	            		<?php while ($row = mysqli_fetch_array($phantrang)) {
      							$id = $row['id'];
+
 							?>
 					    <div class="row-item row">
 		                	<h3>
@@ -48,7 +52,7 @@
                                 <li>
                                     <a href="#">&laquo;</a>
                                 </li>
-                                <?php for ($i=1; $i <= $totalPage; $i++) { 
+                                <?php for($i=1; $i <= $tongsotrang; $i++) { 
                                 	
                                  ?>
                                 <li class="active">

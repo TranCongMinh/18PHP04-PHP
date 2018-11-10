@@ -1,7 +1,8 @@
 <?php
     session_start();
    
-    include 'common/frontend/fooder.php'
+    include 'common/frontend/fooder.php';
+    include 'View/frontend/top-nar.php';
 ?>
 
 
