@@ -1,7 +1,8 @@
 <?php 
 session_start();
-include 'common/header.php';
 include 'controller/backend_controller.php';
+include 'common/header.php';
+
 ?>
   <!-- Left side column. contains the logo and sidebar -->
  

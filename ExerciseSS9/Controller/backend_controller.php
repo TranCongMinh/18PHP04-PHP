@@ -77,10 +77,10 @@
 							header("Location: login.php");
 						}
 						$productModel = new Product();
-						$category = $productModel->getListCategory();
+						$category = $productModel->getListProduct();
 						if(isset($_POST['add_product'])) {
-							$name                = $_POST['name'];
-							$price               = $_POST['price'];
+							$name                = $_POST[''];
+							$price               = $_POST[''];
 							$product_category_id = $_POST['product_category_id'];
 							$image = $_FILES['image'];
 							$path = 'dist/img2/';

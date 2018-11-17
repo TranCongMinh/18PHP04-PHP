@@ -7,9 +7,7 @@
 	            		<h2 style="margin-top:0px; margin-bottom:0px;"> Tin Tức</h2>
 	            	</div>
 					<?php $totalPage = mysqli_num_rows($listAll);
-						$soTrangMuonHienThi = 2;
-						$currentPage = ceil($totalPage/$soTrangMuonHienThi);
-						echo $currentPage;
+						
 					 ?>
 	            	<div class="panel-body">
 	            		<!-- item -->
